@@ -1,24 +1,21 @@
-import '../styles/Home.module.css';
-
-const user = {
-  name: 'Hedy Lamarr',
-  imageUrl: 'https://i.imgur.com/yXOvdOSs.jpg',
-  imageSize: 90,
-};
+import { useState } from 'react';
 
 export default function MyAPP() {
+  const [count, setCount] = useState(0);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
   return (
     <>
-      <h1>{user.name}</h1>
-      <img
-        className="avatar"
-        src={user.imageUrl}
-        alt={'Photo of' + user.name}
-        style={{
-          height: user.imageSize,
-          width: user.imageSize,
-        }}
-      />
+      <h1>Home</h1>
+      <MyButton />
+      <MyButton />
     </>
   );
+}
+
+function MyButton() {
+  
 }
